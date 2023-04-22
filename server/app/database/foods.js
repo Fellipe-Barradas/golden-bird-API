@@ -51,4 +51,12 @@ const foods = [
   },
 ];
 
-module.exports = foods;
+const { v4: uuidv4 } = require('uuid');
+
+const foodsWithIds = foods.map(food => ({
+  ...food,
+  id: uuidv4(),
+}));
+
+
+module.exports = foodsWithIds;
